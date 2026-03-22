@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="jquery-3.6.1.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("img").animate({ height: '350px'},"slow");
+    $("img").animate({ width: '350px'},"slow");
+    $("img").animate({ height: '100px'},"slow");
+    $("img").animate({ width: '100px'},"slow");
+  });
+});
+</script> 
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<img src="Chrysanthemum.jpg" height="100" width="100" >
+</body>
+</html>

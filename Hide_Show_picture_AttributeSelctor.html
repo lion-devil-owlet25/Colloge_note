@@ -1,0 +1,25 @@
+<html>
+<head>
+<script src="jquery-3.6.1.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("[src]").hide();
+  })
+   $("#show").click(function(){
+    $("[src]").show();
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>These are some picture</h2>
+
+<img src="Chrysanthemum.jpg" height="100" width="120" name="_blank">
+<img src="Koala.jpg" height="100" width="120">
+<img src="Tulips.jpg" height="100" width="120"> <br>
+<button id="hide">Hide pictures</button>
+<button id="show">Show pictures</button>
+</body>
+</html>

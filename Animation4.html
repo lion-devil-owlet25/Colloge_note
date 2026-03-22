@@ -1,0 +1,19 @@
+<html>
+<head>
+<script src="jquery-3.6.1.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({ left: '250px', height: '250px', width: '350px'},"slow");
+	$("div").animate({ fontSize: '6em'},"slow");
+  });
+});
+</script> 
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<div style="background-color:#0033FF;height:100px;width:100px;position:absolute";> welcome</div>
+</body>
+</html>

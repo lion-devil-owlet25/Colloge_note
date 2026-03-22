@@ -1,0 +1,35 @@
+<html>
+<head>
+<script src="jquery-3.6.1.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle(5000);
+  });
+  $("button").click(function(){
+    $("#panel").stop();
+  });
+});
+</script>
+<style> 
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #999999;
+  border: solid 1px #993300;
+}
+
+#panel {
+  padding: 250px;
+  display: none;
+  font-size: 150%;
+  background:#0033FF
+}
+</style>
+</head>
+<body>
+ <button>stopping slide</button>
+<div id="flip">Click to slide the panel down or up</div>
+<div id="panel">Hello world!</div>
+</body>
+</html>

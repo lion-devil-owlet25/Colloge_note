@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#in").click(function(){
+    $("#111").fadeTo("slow", 0.6);
+	$("#112").fadeTo(2500, 0.35);
+	$("#113").fadeTo(4000, 0.15);
+  })
+   $("#out").click(function(){
+    $("#111").fadeTo("slow", 1.0);
+	$("#112").fadeTo(2500, 1.0);
+	$("#113").fadeTo(4000, 1.0);
+
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>These are some picture</h2>
+
+<img id="111" src="Chrysanthemum.jpg" height="100" width="120" name="_blank"><br>
+<img id="112" src="Koala.jpg" height="100" width="120"><br>
+<img id="113" src="Tulips.jpg" height="100" width="120"> <br>
+<button id="in">Fade in pictures</button>
+<button id="out">Fade out pictures</button>
+</body>
+</html>

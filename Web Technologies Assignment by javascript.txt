@@ -1,0 +1,67 @@
+Q.WAP to check whether a number is prime or not by using java script.
+
+Ans function checkPrime(num) {
+    let i, flag = true;
+    for (i = 2; i <= num - 1; i++) {
+        if (num % i == 0) {
+            flag = false;
+            break;
+        }
+    }
+    if (flag == true)
+        console.log(num + " is prime");
+    else
+        console.log(num + " is not prime");
+}
+checkPrime(4);
+checkPrime(5);
+
+Output
+4 is not prime
+5 is prime
+
+
+
+Q. WAP to check whether a number is perfect or not.
+
+function isPerfectNumber(n) {
+ 
+    // Guard Clause for non-positive
+    // or non-integer input
+    if (!Number.isInteger(n) || n <= 0) {
+        console.log("Please provide a valid positive integer.");
+        return false;
+    }
+ 
+    let sum = 0;
+ 
+    // Loop to find proper divisors 
+    // and calculate the sum
+    for (let i = 1; i < n; i++) {
+        if (n % i === 0) {
+            sum += i;
+        }
+    }
+ 
+    // Check if the sum of proper divisors
+    // equals the original number
+    const isPerfect = sum === n;
+ 
+    // Output the result
+    if (isPerfect) {
+        console.log(`${n} is a perfect number.`);
+    } else {
+        console.log(`${n} is not a perfect number.`);
+    }
+ 
+    return isPerfect;
+}
+ 
+// Example 1
+isPerfectNumber(25);
+ 
+// Example 2
+isPerfectNumber(6);
+Output
+25 is not a perfect number.
+6 is a perfect number.

@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="jquery-3.6.1.js"></script>
+<script>
+$(document).ready(function(){
+ $("img").hide();
+  $("button").mouseleave(function(){
+    $("[src]").hide();
+  });
+   $("button").mouseenter(function(){
+    $("[src]").show();
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>These are some picture</h2><br>
+<button>Hide-show pictures</button><br>
+<img src="Chrysanthemum.jpg" height="200" width="240" name="_blank" >
+<img src="Koala.jpg" height="200" width="240">
+<img src="Tulips.jpg" height="200" width="240"> <br>
+
+
+</body>
+</html>
