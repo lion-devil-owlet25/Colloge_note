@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Transformation</title>
+</head>
+<body>
+<input type="text" id="inputString" placeholder="Enter your string">
+<button onclick="transformString()">Transform</button>
+<p id="output"></p>
+<script>
+function transformString() {
+const input = document.getElementById('inputString').value;
+const words = input.split(' ');
+const lastWord = words.pop();
+const initials = words.map(word => word[0]).join('');
+const result = `${lastWord} ${initials}`;
+document.getElementById('output').textContent = result;
+}
+</script>
+</body>
+</html>

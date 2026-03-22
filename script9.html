@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="tiu" ng-controller="XYZ">
+<h3>Original Array:</h3>
+<ul>
+<li ng-repeat="x in N">{{x}}</li>
+</ul>
+<h3>Last 10 Elements:</h3>
+<ul>
+<li ng-repeat="x in N | limitTo:-10">{{x}}</li></ul>
+</div>
+<script>angular.module("tiu",[]).controller("XYZ",function($scope){
+$scope.N =["grapes","apple","lime","kiwi","pineapple","banana","orange","pear",
+"peach","watermelon","strawberry","blueberry","cherry","mango","papaya","apricot","fig","plum","nectarine","lemon"];
+})
+</script>
+</body>
+</html>

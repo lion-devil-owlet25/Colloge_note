@@ -1,0 +1,74 @@
+<html> 
+<head> 
+  <title>AngularJS Form Validation</title> 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+  <style> 
+    input.ng-invalid.ng-touched { 
+      border: 2px solid red; 
+    } 
+    input.ng-valid.ng-touched { 
+      border: 2px solid green; 
+    } 
+    span { 
+      color: red; 
+      font-size: 12px; 
+    } 
+  </style> 
+</head> 
+ 
+<body ng-app="mainApp" ng-controller="FormCtrl"> 
+ 
+  <h2>Student Registration Form</h2> 
+ 
+  <form name="studentForm" novalidate> 
+ 
+    <!-- Name --> 
+    <label>Name:</label><br> 
+    <input type="text" name="name" ng-model="student.name" required> 
+    <br> 
+    <span ng-show="studentForm.name.$touched && studentForm.name.$invalid"> 
+      Name is required. 
+    </span> 
+    <br><br> 
+ 
+    <!-- Email --> 
+    <label>Email:</label><br> 
+    <input type="email" name="email" ng-model="student.email" required> 
+    <br> 
+    <span ng-show="studentForm.email.$touched && studentForm.email.$invalid"> 
+      Enter a valid email. 
+    </span> 
+    <br><br> 
+ 
+    <!-- Password --> 
+    <label>Password:</label><br> 
+    <input type="password" name="password" ng-model="student.password" ng-minlength="6" 
+required> 
+    <br> 
+    <span ng-show="studentForm.password.$touched && studentForm.password.$invalid"> 
+      Password must be at least 6 characters. 
+    </span> 
+    <br><br> 
+ 
+    <!-- Submit Button --> 
+    <button type="submit" ng-disabled="studentForm.$invalid"> 
+      Submit 
+    </button> 
+  </form> 
+ 
+  <hr> 
+ 
+  <!-- Preview --> 
+  <div ng-show="studentForm.$valid"> 
+    <h3>Preview</h3> 
+    <p><b>Name:</b> {{student.name}}</p> 
+    <p><b>Email:</b> {{student.email}}</p> 
+  </div> 
+<script> 
+var app = angular.module('mainApp', []); 
+app.controller('FormCtrl', function($scope) { 
+$scope.student = {}; 
+}); 
+</script> 
+</body> 
+</html>

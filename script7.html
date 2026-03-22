@@ -1,0 +1,15 @@
+<html>
+<head><title>Assignment 2</title></head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-app=""ng-init="a=[23.12,12.53,19.64,42.50,78.13,70.77]">
+<h1>The array is:{{a}}</h1>
+<p>Addition of all elements= {{a[0]+a[1]+a[2]+a[3]+a[4]+a[5]}}</p>
+<p>Multiplication of first element and fourth element = {{ a[0] * a[3] }}</p>
+<p>Subtraction of second element and last element = {{ a[1] - a[5] }}</p>
+<p>Division of last element and fourth element = {{ (a[5] / a[3]).toFixed(2) }}</p>
+<p>Modular Division of third element and fourth element = {{ a[2] % a[3] }}</p>
+</div>
+</body>
+</html>

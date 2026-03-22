@@ -1,0 +1,19 @@
+<html lang="en" ng-app="myApp">
+<head>
+<title>ng-show Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="MyController">
+
+    <button ng-click="show = !show">Toggle Text</button>
+    <p ng-show="show">Good morning Sir.Nice to meet you!</p>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('MyController', function($scope) {
+            $scope.show = false;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<h2> Angular Filter</h2>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div lang="en" ng-app="myApp" ng-controller="myCtrl">
+<h3>Search Filter Example</h3>
+<input type="text" ng-model="searchText" placeholder="Search by name...">
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+<tr ng-repeat="person in people|filter:searchText">
+<td>{{person.id}}</td>
+<td>{{person.name}}</td>
+<td>{{person.age}}</td>
+</tr>
+</table>
+<script>
+var app=angular.module("myApp",[]);
+app.controller("myCtrl",function($scope){
+$scope.people=[
+{id: 1,name: "A", age: 25},
+{id: 2,name: "B", age: 30},
+{id: 3,name: "C", age: 28}
+];
+});
+</script>
+</div>
+</body>
+</html>

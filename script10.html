@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+</script>
+<title> AngularJSExample</title>
+</head>
+<body>
+<div ng-app="tiu" ng-controller="XYZ">
+<p><input type="text" ng-model="test"></p>
+<ul>
+<li ng-repeat="x in N|filter:test">
+{{x}}
+</li>
+</ul>
+</div>
+<script> angular.module("tiu",[]).controller("XYZ",function($scope){
+$scope.N = ["grapes","apple","lime","kiwi","pineapple"];
+});
+</script>
+</body>
+</html>

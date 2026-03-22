@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>  JavaScript Program for Reversing Words in a Sentence </title>
+<body>
+<script lang="javascript">
+function reverseWords(input) {
+    const words = input.split(' ');
+    const reversedWords = words.reverse();
+    const output = reversedWords.join(' ');
+    return output;
+}
+const input = "have a nice day";
+const output = reverseWords(input);
+document.writeln(output); 
+</script>
+</body>
+</head>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Corrected AngularJS CDN link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+    <!-- Initialized AngularJS application and dictionary object -->
+    <div ng-app="" ng-init="dict={A:19, B:64, C:97, D:89}">
+        <p>Values of the dictionary are:</p>
+        <ul>
+            <li>A: {{ dict.A }}</li>
+            <li>B: {{ dict.B }}</li>
+            <li>C: {{ dict.C }}</li>
+            <li>D: {{ dict.D }}</li>
+        </ul>
+    </div>
+
+</body>
+</html>

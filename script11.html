@@ -1,0 +1,38 @@
+<html ng-app="tiu">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-controller="XYZ">
+    <ul>
+        <li ng-repeat="x in N">
+            {{ x | cust }}
+        </li>
+    </ul>
+</div>
+
+<script>
+    angular.module("tiu", [])
+    .filter('cust', function () {
+        return function (x) {
+            var txt = "";
+            for (var i = 0; i < x.length; i++) {
+                var c = x[i];
+                if (i % 2 == 0) {
+                    c = c.toUpperCase();
+                }
+                txt += c;
+            }
+            return txt;
+        };
+    })
+    .controller("XYZ", function ($scope) {
+        $scope.N = ["abcd", "xyz", "pqrs", "tiu"];
+    });
+</script>
+
+</body>
+</html>

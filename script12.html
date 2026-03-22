@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="tiu" ng-controller="XYZ">
+
+    <button ng-dblclick="c = c + 1">
+        Click Me!!
+    </button>
+
+    <h3>Total number of clicks: {{ c }}</h3>
+
+</div>
+
+<script>
+    angular.module('tiu', []).controller('XYZ', function($scope) {
+        $scope.c = 0;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<html> 
+<head> 
+  <title>AngularJS Easy Example</title> 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+  <style> 
+    input.ng-invalid.ng-touched { 
+      border: 2px solid red; 
+    } 
+    input.ng-valid.ng-touched { 
+      border: 2px solid green; 
+    } 
+    table, th, td { 
+      border: 1px solid gray; 
+      border-collapse: collapse; 
+      padding: 5px; 
+    } 
+  </style> 
+</head> 
+ 
+<body ng-app="mainApp" ng-controller="MainController"> 
+ 
+  <h2>Student Registration</h2> 
+ 
+  <!-- Form --> 
+  <form name="studentForm" novalidate> 
+    <label>Name:</label><br> 
+    <input type="text" name="name" ng-model="newStudent.name" required> 
+    <br> 
+    <label>Marks:</label><br> 
+    <input type="number" name="marks" ng-model="newStudent.marks" required> 
+    <br><br> 
+    <button type="button" ng-click="addStudent()" ng-disabled="studentForm.$invalid"> 
+      Add Student 
+    </button> 
+  </form> 
+ 
+  <hr> 
+ 
+  <!-- Filter --> 
+  <input type="text" ng-model="searchText" placeholder="Search student..."> 
+ 
+  <!-- Student Table --> 
+  <h3>Student List</h3> 
+  <table> 
+    <tr> 
+      <th>Name</th> 
+      <th>Marks</th> 
+    </tr> 
+    <tr ng-repeat="student in students | filter:searchText | orderBy:'marks':true"> 
+      <td>{{student.name | uppercase}}</td> 
+      <td>{{student.marks}}</td> 
+    </tr> 
+  </table> 
+ 
+  <script> 
+    var app = angular.module('mainApp', []); 
+    app.controller('MainController', function($scope) { 
+      $scope.students = [ 
+        { name: 'Mahesh', marks: 75 }, 
+        { name: 'Sneha', marks: 85 }, 
+        { name: 'John', marks: 65 } 
+      ]; 
+ 
+      $scope.newStudent = {}; 
+ 
+      $scope.addStudent = function() { 
+        $scope.students.push({ 
+          name: $scope.newStudent.name, 
+          marks: $scope.newStudent.marks 
+        }); 
+        $scope.newStudent = {}; // clear form 
+        $scope.studentForm.$setPristine(); // reset form state 
+        $scope.studentForm.$setUntouched(); 
+      }; 
+    }); 
+  </script> 
+ 
+</body> 
+</html>

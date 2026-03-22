@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>  Function Overloading in JavaScript </title>
+<body>
+<script lang="javascript">
+function greet() {
+    if (arguments. length === 0) {
+        document.writeln("Hello, World!");
+    } else if (arguments.length === 1 && typeof arguments[0] === 'string') {
+        document.writeln(`Hello, ${arguments[0]}!`);
+    } else if (arguments.length === 2 && typeof arguments[0] === 'string' && typeof arguments[1] === 'string') {
+        document.writeln(`Hello, ${arguments[0]} and ${arguments[1]}!`);
+    } 
+}
+greet();
+greet("Alice");
+greet("Alice", "Bob");
+</script>
+</body>
+</head>
+</html>

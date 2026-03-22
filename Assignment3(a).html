@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Validation</title>
+</head>
+<body>
+<input type="password" id="password" placeholder="Enter password">
+<button onclick="validatePassword()">Validate Password</button>
+<p id="result"></p>
+<script>
+function validatePassword() 
+{
+const password = document.getElementById('password').value;
+const result = document.getElementById('result');
+const isValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password);
+result.textContent = isValid ? "Password is valid!" : "Password must be at least 8 characters long, include 1 digit, 1 uppercase letter, and 1 lowercase letter.";
+}
+</script>
+</body>
+</html>

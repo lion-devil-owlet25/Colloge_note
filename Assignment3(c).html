@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Transformation</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<style>
+#myImage 
+{
+width: 200px; /* Set initial width */
+transition: all 0.3s ease; /* Smooth transition */
+}
+</style>
+</head>
+<body>
+<img id="myImage" src=devil.jpeg alt="Sample Image">
+<script>
+$(document).ready(function() {
+$('#myImage').mouseenter(function() {
+$(this).css({
+'width': '250px', // Increase width
+'opacity': '0.5'  // Decrease opacity
+});
+}).mouseleave(function() {
+$(this).css({
+'width': '200px', // Reset to original width
+'opacity': '1'    // Reset to original opacity
+ });
+ });
+ });
+</script>
+</body>
+</html>
